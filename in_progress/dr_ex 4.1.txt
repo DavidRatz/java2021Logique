@@ -9,4 +9,14 @@ Si la valeur est différente, un nouveau choix sera demandé.
 
 Solution
 --------
-       
+Debut validationEntree
+	Variables locales
+		var choix :N <- 0
+	Fin variables locales
+	Afficher "Entre une valeur entre 0 et 4 : "
+	Saisir choix
+	Tant que choix<0 ou choix>4
+		Afficher "Valeur incorrecte !!! Veuillez entrer une valeur entre 0 et 4 : "
+		Saisir choix
+	Fin Tant que
+Fin validationEntree
