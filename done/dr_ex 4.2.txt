@@ -1,0 +1,27 @@
+4.2 Moyenne
+-----------
+
+Ecrire le programme qui calcule la moyenne d'une série de nombres entrés au clavier.
+  •  La fin de la série sera annoncée par un 100. 
+
+-------------------------------------------------------------------------------------------
+
+Solution
+--------
+    Debut moyenne
+		Variables locales
+			Var nombreEntre :N <- 0
+			Var resultat :N <- 0
+			Var nombreSaisie :N <- 0
+		Fin variables locales
+		Afficher "Entre un nombre : "
+		Saisir nombreEntre
+		Tant que nombreEntre != 100
+			Afficher "Entre un nombre : "
+			Saisir nombreEntre
+			resultat <- resultat + nombreEntre
+			nombreSaisie <- nombreSaisie + 1
+		Fin tant que
+		resultat <- resultat / nombreSaisie
+		Afficher "La moyenne de la série de nombres entrés est de ", resultat
+	Fin moyenne
