@@ -1,0 +1,76 @@
+4.3	Min max
+-----------
+
+Ecrire le programme qui calcule la plus grande et la plus petite valeur d'une série de nombres entrés au clavier.
+
+  •  La fin de la série sera annoncée par un 100. 
+  •  Le programme affichera également :
+     o  le plus grand;
+     o  le plus petit des nombres;
+     o  la position du premier maximum (optionnel);
+     o  la position du dernier maximum (optionnel);
+     o  le nombre d'occurrence du maximum (optionnel);
+     o  Idem pour le minimum (optionnel).
+
+-------------------------------------------------------------------------------------------
+
+Solution
+--------
+	Debut MinMax
+		Variables locales
+			Var nombreEntre :N <- 0
+			Var nombreMin :N <- 0
+			Var nombreMax :N <- 0
+			Var premierPositionMax :N <- 0
+			Var dernierPositionMax :N <- 0
+			Var nbOccurenceMin :N <- 0
+			Var nbOccurenceMax :N <- 0
+			Var cptSaisie :N <- 0
+		Fin variables locales
+		Afficher "Entre un nombre : (Terminer la série par un 100)"
+		Saisir nombreEntre
+		Si nombreEntre != 100
+		Alors
+			nombreMin <- nombreEntre
+			nombreMax <- nombreEntre
+			cptSaisie <- 1
+			premierPositionMax <- cptSaisie
+			dernierPositionMax <- cptSaisie
+			nbOccurenceMax <- 1
+			nbOccurenceMin <- 1
+			Tant que nombreEntre != 100
+				Si nombreEntre < nombreMin
+				Alors
+					nombreMin <- nombreEntre
+					nbOccurenceMin <- 1
+				Sinon
+					Si nombreEntre = nombreMin
+					Alors
+						nbOccurenceMin <- nbOccurenceMin + 1
+					Fin Si
+				Fin Si
+				Si nombreEntre > nombreMax
+				Alors
+					nombreMax <- nombreEntre
+					nbOccurenceMax <- 1
+					premierPositionMax <- cptSaisie
+					dernierPositionMax <- cptSaisie
+				Sinon
+					Si nombreEntre = nombreMax
+					Alors
+						nbOccurenceMax <- nbOccurenceMax + 1
+						dernierPositionMax <- cptSaisie
+					Fin Si
+				Fin Si
+				Afficher "Entre un nombre : (Terminer la série par un 100)"
+				Saisir nombreEntre
+				cptSaisie <- cptSaisie + 1
+			Fin tant que
+		Fin Si
+		Afficher "Le plus grand des nombres est : ", nombreMax
+		Afficher "Le plus petit des nombres est : ", nombreMin
+		Afficher "La position du premier maximum est : ", premierPositionMax
+		Afficher "La position du dernier maximum est : ", dernierPositionMax
+		Afficher "le nombre d'occurrence du maximum est : ", nbOccurenceMax
+		Afficher "le nombre d'occurrence du minimum est : ", nbOccurenceMin
+	Fin MinMax

@@ -17,9 +17,14 @@ Solution
 		Saisir nombre
 		nombreEntre <- nombre
 		resultat <- nombre
-		Tant que nombre > 1
-			nombre <- nombre - 1
-			resultat <- resultat * nombre
-		Fin tant que
-		Afficher "Le résultat de ", nombreEntre, "! est de ", resultat
+		Si nombre > 0
+		Alors
+			Tant que nombre > 1
+				nombre <- nombre - 1
+				resultat <- resultat * nombre
+			Fin tant que
+			Afficher "Le résultat de ", nombreEntre, "! est de ", resultat
+		Sinon
+			Afficher "Le nombre doit être un entier positif !"
+		Fin Si
 	Fin factorielle

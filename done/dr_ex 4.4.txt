@@ -1,0 +1,122 @@
+4.4	Min max de luxe
+-------------------
+
+Ecrire le programme qui calcule la plus grande et la plus petite suite croissante de valeurs d'une série de nombres entrés au clavier.
+
+  •  La fin de la série sera annoncée par un 100. 
+  •  Le programme affichera également :
+     o  la position du premier maximum;
+     o  la position du dernier maximum;
+     o  le nombre d'occurrence du maximum;
+
+-------------------------------------------------------------------------------------------
+
+Solution
+--------
+    Debut MinMaxLuxe
+		Variables locales
+			Var nombreEntre :N <- 0
+			Var nombrePrecedent :N <- 0
+			Var premierPositionMin :N <- 0
+			Var dernierPositionMin :N <- 0
+			Var nbOccurenceMin :N <- 0
+			Var premierPositionMax :N <- 0
+			Var dernierPositionMax :N <- 0
+			Var nbOccurenceMax :N <- 0
+			Var cptSaisie :N <- 0
+			Var cptSuite :N <- 0
+			Var cptSuiteMin :N <- 0
+			Var cptSuiteMax :N <- 0
+		Fin variables locales
+		Afficher "Entre un nombre : (Terminer la série par un 100)"
+		Saisir nombreEntre
+		Si nombreEntre != 100
+		Alors
+			cptSaisie <- 1
+			premierPositionMin <- cptSaisie
+			dernierPositionMin <- cptSaisie
+			premierPositionMax <- cptSaisie
+			dernierPositionMax <- cptSaisie
+			nombreMin <- nombreEntre
+			nombreMax <- nombreEntre
+			nbOccurenceMax <- 1
+			nbOccurenceMin <- 1
+			nombrePrecedent <- nombreEntre
+			cptSuite <- 1
+			Tant que nombreEntre != 100
+				Si nombreEntre <= nombrePrecedent
+				Alors
+					Si nombreEntre < nombreMin
+					Alors
+						nbOccurenceMin <- 1
+						premierPositionMin <- cptSaisie
+						dernierPositionMin <- cptSaisie
+						nombreMin <- nombreEntre
+					Sinon
+						Si nombreEntre = nombreMin
+						Alors
+							nbOccurenceMin <- nbOccurenceMin + 1
+							dernierPositionMin <- cptSaisie
+						Fin Si
+					Fin Si
+					Si nombreEntre = nombreMax
+					Alors
+						nbOccurenceMax <- nbOccurenceMax + 1
+						dernierPositionMax <- cptSaisie
+					Fin Si
+					Si cptSuite < cptSuiteMin ou cptSuiteMin = 0
+					Alors
+						cptSuiteMin <- cptSuite
+					Sinon 
+						Si cptSuite > cptSuiteMax ou cptSuiteMax = 0
+						Alors
+							cptSuiteMax <- cptSuite 
+						FinSi
+					FinSi
+					cptSuite <- 1
+				Sinon
+					Si nombreEntre > nombrePrecedent
+					Alors
+						cptSuite <- cptSuite + 1
+						Si nombreEntre > nombreMax
+						Alors
+							nbOccurenceMax <- 1
+							premierPositionMax <- cptSaisie
+							dernierPositionMax <- cptSaisie
+							nombreMax <- nombreEntre
+						Sinon
+							Si nombreEntre = nombreMax
+							Alors
+								nbOccurenceMax <- nbOccurenceMax + 1
+								dernierPositionMax <- cptSaisie
+							Fin Si
+						Fin Si
+					Sinon
+						
+						Si cptSuite < cptSuiteMin ou cptSuiteMin = 0
+						Alors
+							cptSuiteMin <- cptSuite
+						Sinon 
+							Si cptSuite > cptSuiteMax ou cptSuiteMax = 0
+							Alors
+								cptSuiteMax <- cptSuite 
+							FinSi
+						FinSi
+						cptSuite <- 1
+					Fin Si
+				Fin Si	
+				nombrePrecedent <- nombreEntre				
+				Afficher "Entre un nombre : (Terminer la série par un 100)"
+				Saisir nombreEntre
+				cptSaisie <- cptSaisie + 1
+			Fin tant que
+		Fin Si
+		Afficher "la plus grande suite est : ", cptSuiteMax
+		Afficher "la plus petite suite est : ", cptSuiteMin
+		Afficher "la position du premier maximum est : ", premierPositionMax
+		Afficher "la position du dernier maximum est : ", dernierPositionMax
+		Afficher "le nombre d'occurrence du maximum est : ", nbOccurenceMax
+		Afficher "la position du premier minimum est : ", premierPositionMin
+		Afficher "la position du dernier minimum est : ", dernierPositionMin
+		Afficher "le nombre d'occurrence du minimum est : ", nbOccurenceMin
+	Fin MinMaxLuxe		
