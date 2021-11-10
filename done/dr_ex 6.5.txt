@@ -1,0 +1,41 @@
+Debut plusGrand
+	Debut variables locales
+		Var texte1Saisi :T <- ""
+		Var texte2Saisi :T <- ""
+		Var asciiLettre1 :N <- 0
+		Var asciiLettre2 :N <- 0
+		var longueurTexte1 :N <- 0
+		var longueurTexte2 :N <- 0
+		var longueurTexte :N <- 0
+		var position :N <- 0
+		var croissant :B <- False
+	Fin variables locales
+	Afficher "Entrer un premier texte : "
+	Saisir texte1Saisi
+	Afficher "Entrer un deuxième texte : "
+	Saisir texte2Saisi
+	
+	longueurTexte1 <- longueur(texte1Saisi)
+	longueurTexte2 <- longueur(texte2Saisi)
+	
+	Si longueurTexte1 < longueurTexte2
+	Alors
+		longueurTexte <- longueurTexte2
+	Sinon
+		longueurTexte <- longueurTexte1
+	Fin si
+	
+	Tant que asciiLettre1 = asciiLettre2
+		asciiLettre1 <- ascii(caract(texte1Saisi,position))
+		asciiLettre2 <- ascii(caract(texte2Saisi,position))
+		
+		position <- position + 1
+	FIn tant que
+	Si asciiLettre1 < asciiLettre2
+	Alors
+		croissant <- False
+	Sinon
+		croissant <- True
+	FIn si
+	Afficher "Le premier texte est croissant par rapport au deuxième texte ? ", croissant
+Fin plusGrand

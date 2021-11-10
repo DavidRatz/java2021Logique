@@ -1,0 +1,36 @@
+Debut rechercheTexte
+	Debut variables locales
+		Var texteSaisi :T <- ""
+		Var texteARechercherSaisi :T <- ""
+		var nombreFoisTexteTrouver :N <- 0
+		var premierePosition :N <- 0
+		var dernierePosition :N <- 0
+		var longueurTexteSaisi :N <- 0
+	Fin variables locales
+	Afficher "Entrer un texte : "
+	Saisir texteSaisi
+	Afficher "Entrer le texte à trouver : "
+	Saisir texteARechercherSaisi
+	longueurTexteSaisi <- longueur(texteSaisi)
+	
+	Pour position allant de 0 à longueurTexteSaisi-1
+		Si texteARechercherSaisi = sousChaine(texteSaisi,position, position + (longueur(texteARechercherSaisi)+1))
+		Alors
+			Si nombreFoisTexteTrouver = 0
+			Alors
+				premierePosition <- position
+				dernierePosition <- position
+				nombreFoisTexteTrouver <- nombreFoisTexteTrouver + 1
+			Sinon
+				dernierePosition <- position
+				nombreFoisTexteTrouver <- nombreFoisTexteTrouver + 1
+			Fin si
+		Fin si
+	position Suivant
+	Si nombreFoisTexteTrouver > 0
+	Alors
+		Afficher "Le texte à trouver '", texteARechercherSaisi, "' apparaît pour la première fois à la position ", premierePosition + 1, " et la dernière fois à la position ", dernierePosition, " et se trouve ", nombreFoisTexteTrouver, " fois dans le texte ", texteSaisi
+	Sinon
+		Afficher "Le texte à trouver ", texteARechercherSaisi, " n'apparaît pas dans le texte ", texteSaisi
+	Fin si
+Fin rechercheTexte

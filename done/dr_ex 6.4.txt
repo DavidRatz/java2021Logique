@@ -1,0 +1,24 @@
+Debut sousChaine
+	Debut variables locales
+		Var texteSaisi :T <- ""
+		Var positionDepart :N <- 0
+		Var positionFin :N <- 0
+		var souschaine :T <- ""
+	Fin variables locales
+	Afficher "Entrer un texte : "
+	Saisir texteSaisi
+	Afficher "Entrer la position de départ : "
+	Saisir positionDepart
+	Afficher "Entrer la position de fin : "
+	Saisir positionFin
+	
+	Si positionDepart <= positionFin
+	ALors
+		Pour positionDepart allant de positionDepart à positionFin-1
+			souschaine <- souschaine + caract(texteSaisi, cpt)
+		positionDepart suivant
+	Sinon
+		Afficher "La position de départ doit être plus petite que la position de fin !"
+	Fin si
+	Afficher "La sous-chaine de '", texteSaisi, ' est ", souschaine  
+Fin sousChaine

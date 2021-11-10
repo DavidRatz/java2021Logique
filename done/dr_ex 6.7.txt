@@ -1,0 +1,24 @@
+Debut inverseMot
+	Debut variables locales
+		Var texteSaisi :T <- ""
+		Var texteFinal :T <- ""
+		var mot :T <- ""
+		var longueurTexte :N <- 0
+	Fin variables locales
+	Afficher "Entrer un texte : "
+	Saisir texteSaisi
+	
+	longueurTexte <- longueur(texteSaisi)
+	Pour cpt allant de longueurTexte-1 à 0
+		Si caract(texteSaisi,cpt) != " "
+		Alors
+			mot <- mot + caract(texteSaisi,cpt)
+		Sinon
+			texteFinal <- mot + " " + texteFinal
+			mot <- ""
+		Fin si
+	cpt suivant
+	Afficher "Le texte saisi : ",texteSaisi
+	Afficher "Le texte avec tous les mots inversé : ",texteFinal
+	
+Fin inverseMot

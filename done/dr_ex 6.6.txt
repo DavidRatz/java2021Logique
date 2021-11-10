@@ -1,0 +1,17 @@
+Debut inverseCaractere
+	Debut variables locales
+		Var texteSaisi :T <- ""
+		Var texteInverse :T <- ""
+		var longueurTexte :N <- 0
+	Fin variables locales
+	Afficher "Entrer un texte : "
+	Saisir texteSaisi
+	
+	longueurTexte <- longueur(texteSaisi)
+	Pour cpt allant de longueurTexte-1 à 0
+		texteInverse <- texteInverse + caract(texteSaisi,cpt)
+	cpt suivant
+	Afficher "Le texte saisi : ",texteSaisi
+	Afficher "Le texte inversé : ",texteInverse
+	
+Fin inverseCaractere

@@ -1,0 +1,34 @@
+Debut rechercheCaractere
+	Debut variables locales
+		Var caractereSaisi :C <- ''
+		Var texteSaisi :T <- ""
+		var longueurTexteSaisi :N <- 0
+		var nombreFoisCaratere :N <- 0
+		var premierePosition :N <- 0
+		var dernierePosition :N <- 0
+	Fin variables locales
+	Afficher "Entrer un texte : "
+	Saisir texteSaisi
+	Afficher "Entrer le caractère à trouver : "
+	Saisir caractereSaisi
+	longueurTexteSaisi <- longueur(texteSaisi)
+	
+	Pour position allant de 0 à longueurTexteSaisi-1
+		Si caractereSaisi = caract(texteSaisi,position)
+		Alors
+			Si nombreFoisCaratere = 0
+			Alors
+				premierePosition <- position
+			Fin si
+			
+			nombreFoisCaratere <- nombreFoisCaratere + 1
+			dernierePosition <- position
+		Fin si
+	position Suivant
+	Si nombreFoisCaratere > 0
+	Alors
+		Afficher "Le caractère '", caractereSaisi, "' apparaît pour la première fois à la position ", premierePosition + 1, " et la dernière fois à la position ", dernierePosition, " et se trouve ", nombreFoisCaratere, " fois dans le texte ", texteSaisi
+	Sinon
+		Afficher "Le caractère ", caractereSaisi, " n'apparaît pas dans le texte ", texteSaisi
+	Fin si
+Fin rechercheCaractere

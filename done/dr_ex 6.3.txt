@@ -1,0 +1,28 @@
+Debut rechercheRemplacer
+	Debut variables locales
+		Var texteSaisi :T <- ""
+		Var texteARechercherSaisi :T <- ""
+		Var texteARemplacerSaisi :T <- ""
+		Var texteFinal :T <- ""
+		var longueurTexteSaisi :N <- 0
+	Fin variables locales
+	Afficher "Entrer un texte : "
+	Saisir texteSaisi
+	Afficher "Entrer le texte à trouver : "
+	Saisir texteARechercherSaisi
+	Afficher "Entrer le texte à remplacer : "
+	Saisir texteARemplacerSaisi
+	
+	longueurTexteSaisi <- longueur(texteSaisi)
+	
+	Pour position allant de 0 à longueurTexteSaisi-1
+		Si texteARechercherSaisi = SousChaine(texteSaisi, position, position+(longueur(texteARechercherSaisi)+1))
+		Alors
+			texteFinal <- texteFinal + texteARemplacerSaisi
+			position <- position + longueur(texteARemplacerSaisi)
+		Sinon
+			texteFinal <- texteFinal + caract(texteSaisi,position)
+		Fin si
+	position Suivant
+	Afficher "Le texte saisi '" , texteSaisi , "' remplacé par '", texteARemplacerSaisi, " donne '", texteFinal, "'"
+Fin rechercheTexte
