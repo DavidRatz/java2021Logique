@@ -1,0 +1,14 @@
+debut compteurDigital
+    variable locales
+		//CONST TAILLE :N <- 10
+		VAR indice :N <- 0
+		//VAR indice2 :N <- 0
+    fin de variable locales
+	Pour indice allant de 0 à 9
+		Pour indice2 allant de 0 à 9
+			Pour indice3 allant de 0 à 9
+				Afficher indice,indice2,indice3
+			indice3 SUIVANT
+		indice2 SUIVANT
+	indice SUIVANT
+fin compteurDigital

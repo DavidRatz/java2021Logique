@@ -1,0 +1,11 @@
+debut vecteurx2
+    variable locales
+		CONST TAILLE:N <- 16
+		Var tableau:N[TAILLE]
+		VAR indice:N <- 0
+    fin de variable locales
+	tableau[indice] <- 1
+	POUR indice ALLANT DE 1 A TAILLE-1
+		tableau[indice] <- tableau[indice-1] * 2
+	indice SUIVANT
+fin vecteurx2

@@ -2,20 +2,18 @@ Debut inverseMot
 	Debut variables locales
 		Var texteSaisi :T <- ""
 		Var texteFinal :T <- ""
-		var mot :T <- ""
+		var espace :N <- 0
 		var longueurTexte :N <- 0
 	Fin variables locales
 	Afficher "Entrer un texte : "
 	Saisir texteSaisi
 	
 	longueurTexte <- longueur(texteSaisi)
-	Pour cpt allant de longueurTexte-1 à 0
-		Si caract(texteSaisi,cpt) != " "
+	Pour cpt allant de 0 à longueurTexte-1
+		Si caract(texteSaisi,cpt) == ' '
 		Alors
-			mot <- mot + caract(texteSaisi,cpt)
-		Sinon
-			texteFinal <- mot + " " + texteFinal
-			mot <- ""
+			espace <- i
+			texteFinal <- sousChaine(text,espace,i) + " " + texteFinal
 		Fin si
 	cpt suivant
 	Afficher "Le texte saisi : ",texteSaisi

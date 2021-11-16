@@ -1,0 +1,24 @@
+debut inverseLettreMot
+    variable locales
+        var text: T <-""
+        var motInverse: T <-""
+        var mot: T <-""
+        var textInverse: T <-""
+        var position: N <-0
+        var i: N <-0
+        var j: N <-0
+    fin de variable locales
+
+    affiche "entre un text"
+    saisi text
+    pour i allant de 0 a longueur(text)-1 par pas de 1 
+        si caract(text,i) == ' '
+            alors
+            mot = sousChaine(text,position,i)
+            pour j alant de longeur(mot)-1 a 0 par pas de -1
+                motInverse=motInverse+caract(mot,j)
+            
+            textInverse=textInverse+motInverse
+            position=i;
+            motInverse="";
+fin inverseLettreMot

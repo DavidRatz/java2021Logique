@@ -1,0 +1,20 @@
+debut nombrePremier
+    variable locales
+		VAR nombre :N <- 0
+		VAR diviseur :N <- 0
+		var estPremier :B <- true
+    fin de variable locales
+	
+	Pour nombre allant de 1 à 100
+		Pour diviseur allant de 2 à sqrt(nombre) et estPremier PAR PAS de 2 
+			Si nombre MOD diviseur == 0
+			Alors
+				estPremier <- false
+			Fin si
+		diviseur SUIVANT
+		Si estPremier
+		Alors
+			Afficher nombre, " est un nombre premier !"
+		Fin si
+	nombre SUIVANT
+fin nombrePremier

@@ -1,0 +1,15 @@
+debut diagonaleTableauCarre
+    variable locales
+		CONST TAILLE:N <- 4
+		Var tableau :N[TAILLE][TAILLE]
+		VAR indice :N <- 0
+		VAR indice2 :N <- 0
+    fin de variable locales
+	
+	Pour colonneHorizontale allant de 0 à taille-1
+		Pour colonneVerticale allant de colonneHorizontale à taille-1
+			tableau[colonneHorizontale][colonneVerticale] <- 1
+			tableau[colonneHorizontale][taille-1-colonneVerticale] <- 2
+		colonneVerticale SUIVANT
+	colonneHorizontale SUIVANT
+fin nombrePremier

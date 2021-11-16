@@ -1,0 +1,12 @@
+debut inverseVecteur
+    variable locales
+		CONST TAILLE:N <- 10
+		Var tableau:N[TAILLE]
+		VAR indice:N <- 0
+    fin de variable locales
+	Pour indice allant de 0 à TAILLE-1
+		nombrePermuter <- tableau[TAILLE-(indice+1)]
+		tableau[TAILLE-(indice+1)] <- tableau[indice]
+		tableau[indice] <- nombrePermuter
+	indice SUIVANT
+fin inverseVecteur

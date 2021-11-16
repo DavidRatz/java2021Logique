@@ -1,0 +1,14 @@
+debut supprimerEspaces
+    variable locales
+		CONST TAILLE:N <- 50
+		Var tableau:N[TAILLE]
+		VAR indice:N <- 0
+		var nombreLettre :N <- 0
+    fin de variable locales
+	Pour indice allant de 0 à TAILLE-1
+		Si tableau[indice] != ' '
+			nombreLettre <- nombreLettre + 1
+			tableau[nombreLettre] <- tableau[indice]
+		fin si
+	indice SUIVANT
+fin supprimerEspaces

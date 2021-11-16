@@ -1,0 +1,34 @@
+debut minMaxVecteur
+    variable locales
+		CONST TAILLE:N <- 5
+		Var nombres:N[TAILLE]
+		VAR indice:N <- 0
+		Var min :N <- 0
+		Var positionMin :N <- 0
+		Var max :N <- 0
+		Var positionMax :N <- 0
+		Var nmbrePrecedent :N <- 0
+    fin de variable locales
+	AFFICHER "Entrer les ", TAILLE, " nombres"
+	POUR indice ALLANT DE 0 A TAILLE
+		SAISIR nombres[indice]
+		Si indice = 0
+		Alors
+			min <- nombres[indice]
+			max <- nombres[indice]
+		Fin si
+		Si nombres[indice] < min
+		Alors
+			min <- nombres[indice]
+			positionMin <- indice
+		Sinon
+			Si nombres[indice] > max
+			Alors
+				max <- nombres[indice]
+				positionMax <- indice
+			Fin si
+		Fin si
+	indice SUIVANT
+	Afficher "Le nombre minimum est : ", min, " à la position ", positionMin
+	Afficher "Le nombre maximum est : ", max, " à la position ", positionMax
+fin minMaxVecteurv

@@ -1,0 +1,15 @@
+debut sommeSuivant
+    variable locales
+		CONST TAILLE :N <- 10
+		Var tableau :N[TAILLE]
+		VAR indice :N <- 0
+		VAR indice2 :N <- 0
+		var sommeNombreSupp :N <- 0
+    fin de variable locales
+	Pour indice allant de 0 à TAILLE-1
+		Pour indice2 allant de indice à TAILLE-1
+			sommeNombreSupp <- sommeNombreSupp + tableau[indice2]
+		indice2 suivant
+		tableau[indice] <- sommeNombreSupp
+	indice SUIVANT
+fin sommeSuivant

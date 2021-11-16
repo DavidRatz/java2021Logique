@@ -1,0 +1,31 @@
+debut moyenneMinMaxLigne
+    variable locales
+		CONST TAILLE:N <- 4
+		Var tableau :N[TAILLE][TAILLE]
+		Var indice :N <- 0
+		Var indice2 :N <- 0
+		Var moyenne :N <- 0
+		Var min :N <- 0
+		Var max :N <- 0
+		Var sommeNombresTableau :N <- 0
+    fin de variable locales
+	min <- tableau[indice][indice2]
+	max <- tableau[indice][indice2]
+	Pour indice allant de 0 à TAILLE -1
+		Pour indice2 allant de 0 à TAILLE -1
+			Si tableau[indice][indice2] < min
+			Alors
+				min <- tableau[indice][indice2]
+			Sinon
+				Si tableau[indice][indice2] > max
+				Alors
+					max <- tableau[indice][indice2]
+				Fin si
+			Fin si
+			sommeNombresTableau <- sommeNombresTableau + tableau[indice][indice2]
+		indice2 Suivant
+		Afficher "La moyenne est de ", sommeNombresTableau/TAILLE
+		Afficher "Le nombre minimum est ", min
+		Afficher "Le nombre maximum est ", max
+	indice Suivant
+Fin moyenneMinMaxLigne

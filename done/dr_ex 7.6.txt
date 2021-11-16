@@ -1,0 +1,23 @@
+debut copiePlusMoins
+    variable locales
+		CONST TAILLE:N <- 10
+		Var tableau:N[TAILLE]
+		Var tableau2:N[TAILLE]
+		Var tableau3:N[TAILLE]
+		VAR indice:N <- 0
+    fin de variable locales
+	Pour indice allant de  0 a TAILLE-1
+        afficher "entre la valeur"
+        saisir tableau[indice]
+        afficher "entre la logique"
+        saisir tableau2[indice]
+    indice suivant 
+	Pour indice allant de 0 à TAILLE-1
+		Si tableau2[indice] == VRAI
+		Alors
+			tableau3 <- tableau[indice]
+		Sinon
+			tableau3 <- -tableau[indice]
+		Fin si
+	indice SUIVANT
+fin copiePlusMoins

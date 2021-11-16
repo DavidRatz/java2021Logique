@@ -1,0 +1,12 @@
+debut tableMultiplication
+    variable locales
+		CONST TAILLE :N <- 10
+		VAR indice :N <- 0
+		VAR indice2 :N <- 0
+    fin de variable locales
+	Pour indice allant de 1 à TAILLE
+		Pour indice2 allant de 1 à TAILLE
+			Afficher indice , " * ", indice2, " = ", indice * indice2
+		indice2 suivant
+	indice SUIVANT
+fin tableMultiplication

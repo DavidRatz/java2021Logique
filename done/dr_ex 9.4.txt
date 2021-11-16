@@ -1,0 +1,21 @@
+debut carreMagique
+    variable locales
+		CONST TAILLE:N <- 4
+		Var tableau :N[TAILLE][TAILLE]
+		Var indiceLigne :N <- 0
+		Var indiceColonne :N <- 0
+		Var moyenne :N <- 0
+		Var min :N <- 0
+		Var max :N <- 0
+		Var sommeLigne :N <- 0
+		Var sommeColonne :N <- 0
+		Var sommeDiagonale :N <- 0
+    fin de variable locales
+	Pour indiceLigne allant de 0 à TAILLE -1
+		sommeLigne <- sommeLigne + tableau[indiceLigne][0]
+		Pour indiceColonne allant de 0 à TAILLE -1
+			sommeColonne <- sommeColonne + tableau[indiceLigne][indiceColonne]
+		indiceColonne Suivant
+		
+	indiceLigne Suivant
+fin carreMagique
