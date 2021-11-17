@@ -1,0 +1,89 @@
+3.4	Comparaison de 3 nombres
+----------------------------
+
+Écrire le programme qui compare 3 nombres entre eux. 
+Tenir compte d’une égalité possible des nombres.
+
+Attention : 
+   « 5 < 8 > 4 » n’indique pas la comparaison entre le 1er et le 3ème nombre.
+   On préférera par exemple « 4 < 5 < 8 ».
+
+-------------------------------------------------------------------------------------------
+
+Solution
+--------
+	Debut comparaison3Nombres
+		Variables locales
+			var a :N <- 0
+			var b :N <- 0
+			var c :N <- 0
+		Fin variables locales
+		Afficher "Entrer a : "
+		Saisir a
+		Afficher "Entrer b : "
+		Saisir b
+		Afficher "Entrer c : "
+		Saisir c
+		
+		Si a < b
+		Alors
+			Si c < b
+			Alors
+				Si a < c
+				Alors
+					Afficher a, " < ",c , " < ", b
+				Sinon
+					Si c = a
+					Alors
+						Afficher c, " = ",a , " < ", b
+					Sinon
+						Afficher c, " < ",a , " < ", b
+					Fin Si
+				Fin Si
+			Sinon
+				Si c = b
+				Alors
+					Afficher a, " < ",c , " = ", b
+				Sinon
+					Afficher a, " < ",b , " < ", c
+				FinSi
+			FinSi
+		Sinon
+			Si c <= b
+			Alors
+				Si c < b
+				Alors
+					Si b < a
+					Alors
+						Afficher c, " < ",b , " < ", a
+					Sinon
+						Afficher c, " = ",b , " < ", a
+					FinSi
+				Sinon
+					Si b = a
+					Alors
+						Afficher a, " = ",b , " = ", c
+					Sinon
+						Afficher b, " = ",c , " < ", a
+					FinSi
+				FinSi
+			Sinon
+				Si c > a
+				Alors
+					Si a = b
+					Alors
+						Afficher a, " = ",b , " = ", c
+					Sinon
+						Afficher b, " < ",a , " < ", c
+					FinSi
+				Sinon
+					Si c < a
+					Alors
+						Afficher b, " < ",c , " < ", a
+					Sinon
+						Afficher b, " < ",c , " = ", a
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	Fin comparaison3Nombres

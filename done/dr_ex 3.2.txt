@@ -1,0 +1,30 @@
+3.2	Comparaison de 2 nombres
+----------------------------
+
+Écrire le programme qui compare deux nombres et qui indique quel est le plus grand ou s’ils sont égaux.
+
+-------------------------------------------------------------------------------------------
+
+Solution
+--------
+	Debut comparaisonDeuxNombres
+		Variables locales
+			Var nombre1 :N <- 0
+			Var nombre2 :N <- 0
+		Fin variables locales
+		Afficher "Entrer le premier nombre : "
+		Saisir nombre1
+		Afficher "Entrer le deuxième nombre : "
+		Saisir nombre2
+		Si nombre1 > nombre2
+		Alors
+			Afficher "Le nombre le plus grand est : ", nombre1
+		Sinon
+			Si nombre2 > nombre1
+			Alors
+				Afficher "Le nombre le plus grand est : ", nombre2
+			Sinon
+				Afficher "Les deux nombres sont égaux ! Nombre 1 : ", nombre1, ", Nombre 2 : ", nombre2 
+			Fin si
+		Fin si
+	Fin comparaisonDeuxNombres

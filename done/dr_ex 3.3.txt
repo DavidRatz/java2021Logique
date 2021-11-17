@@ -1,0 +1,105 @@
+3.3	Décomposition d'une somme d'argent
+--------------------------------------
+
+Écrire le programme qui permet de décomposer une somme d’argent lue au clavier.
+
+Coupures disponibles : 
+  •  Billets : 100€, 50€, 20€, 5€
+  •  Pièces : 2€, 1€, 0,5€ , 0,2€
+
+Contraintes :
+  •  Le total de la décomposition sera plus grand ou égale à la somme entrée
+  •  Le nombre de coupures de la décomposition sera le plus petite possible
+
+Exemple:
+  •  254,18 € se décompose en : 
+     –  2 billets de 100 €,
+     –  1 billet de 50 €,
+     –  2 pièces de 2 €,
+     –  1 pièce de 0,2 €.
+
+-------------------------------------------------------------------------------------------
+
+Solution
+--------
+	Debut DecompositionSommeArgent
+		Variables locales
+			Var sommeSaisie :N <- 0
+			Var sommeOrigine :N <- 0
+			Var nombreBillet100 :N <- 0
+			Var nombreBillet50 :N <- 0
+			Var nombreBillet20 :N <- 0
+			Var nombreBillet5 :N <- 0
+			Var nombrePiece2 :N <- 0
+			Var nombrePiece1 :N <- 0
+			Var nombrePiece050 :N <- 0
+			Var nombrePiece020 :N <- 0
+		Fin variables locales
+		Afficher "Entrer le somme voulue : "
+		Saisir sommeSaisie
+		sommeOrigine <- sommeSaisie
+		Si somme MOD 0,1 != 0
+		Alors
+			somme <- somme + (0,10 - somme MOD 0,1)
+		Fin si
+		Si somme MOD 1 != 0
+		Alors
+			somme <- somme + 0.5
+		Fin si
+		Si somme MOD 100 != 0
+		Alors
+			somme <- somme MOD 100
+			nombreBillet100 <- somme DIV 100
+		Sinon
+			Si somme MOD 50 != 0
+			Alors
+				somme <- somme MOD 50
+				nombreBillet50 <- somme DIV 50
+			Sinon
+				Si somme MOD 20 != 0
+				Alors
+					somme <- somme MOD 20
+					nombreBillet20 <- somme DIV 20
+				Sinon
+					Si somme MOD 5 != 0
+					Alors
+						somme <- somme MOD 5
+						nombreBillet5 <- somme DIV 5
+					Sinon
+						Si somme MOD 2 != 0
+						Alors
+							somme <- somme MOD 2
+							nombrePiece2 <- somme DIV 2
+						Sinon
+							Si somme MOD 1 != 0
+							Alors
+								somme <- somme MOD 1
+								nombrePiece1 <- somme DIV 1
+							Sinon
+								Si somme MOD 0.5 != 0
+								Alors
+									somme <- somme MOD 0.5
+									nombrePiece050 <- somme DIV 0.5
+								Sinon
+									Si somme MOD 0.2 != 0
+									Alors
+										somme <- somme MOD 0.2
+										nombrePiece020 <- somme DIV 0.2
+									Fin si
+								Fin si
+							Fin si
+						Fin si
+					Fin si
+				Fin si
+			Fin si
+		Fin si
+		Afficher sommeOrigine " € se décompose en : "
+		Afficher "- ", nombreBillet100, " billets de 100 €, "
+		Afficher "- ", nombreBillet50, " billets de 50 €, "
+		Afficher "- ", nombreBillet20, " billets de 20 €, "
+		Afficher "- ", nombreBillet5, " billets de 5 €, "
+		Afficher "- ", nombrePiece2, " pièces de 2 €, "
+		Afficher "- ", nombrePiece1, " pièces de 1 €, "
+		Afficher "- ", nombrePiece050, " pièces de 0.5 €, "
+		Afficher "- ", nombrePiece020, " pièces de 0.2 €, "
+	Fin DecompositionSommeArgent
