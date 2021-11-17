@@ -1,0 +1,26 @@
+Debut DecouverteValeur
+	Variables locales
+		Var valeurAleatoire :N <- 0
+		Var valeurSaisie :N <- 0
+		Var valeurMin :N <- 0
+		Var valeurMax :N <- 0
+		Var nombreEssai :N <- 0
+	Fin variables locales
+	valeurMin <- 0
+	valeurMax <- 100
+	valeurAleatoire <- aleatoire(valeurMax)
+	Repeter
+		Afficher "Entrer une valeur : "
+		Saisir valeurSaisie
+		Afficher "La valeur à découvrir est "
+		Si valeurSaisie < valeurAleatoire
+		Alors
+			Afficher "plus grande !"
+		Sinon
+			Afficher "plus petite !"
+		Fin Si
+		nombreEssai <- nombreEssai + 1
+	Jusqu'à ce que valeurSaisie != valeurAleatoire
+	Afficher "La valeur à découvrir était ? ", valeurAleatoire
+	Afficher "Vous l'avez découvert en ", nombreEssai, " essais."
+Fin DecouverteValeur

@@ -1,0 +1,28 @@
+Debut sommeSuiteNombre
+	Variables locales
+		Var nombre1 :N <- 0
+		Var nombre2 :N <- 0
+		Var somme :N <- 0
+	Fin variables locales
+	Afficher "Entrer valeur 1 : "
+	Saisir nombre1
+	Afficher "Entrer valeur 2 : "
+	Saisir nombre2 
+	Afficher "Total = ", nombre1
+	Si nombre1 = nombre2
+	Alors
+		somme <- nombre1
+		Afficher somme
+	Sinon
+		Si nombre1 < nombre2
+		Alors
+			Pour cpt Allant de nombre1 à nombre2
+				somme <- somme + cpt
+				Afficher " + ", cpt
+			cpt Suivant
+			Afficher "+ " nombre2, " = ", somme
+		Sinon
+			Afficher "Veuillez entrer une valeur 2 plus grande que la valeur 1 !!!"
+		Fin Si
+	Fin Si
+Fin sommeSuiteNombre
