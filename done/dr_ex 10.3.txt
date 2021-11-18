@@ -6,6 +6,7 @@ in larg:N):N
 	resultat <- long * larg
 	RETOURNE resultat
 FIN aireRectangle
+
 Debut Aire_rectangle
 	VARIABLES LOCALES :
 		VAR longueur :N <- 0
@@ -15,5 +16,5 @@ Debut Aire_rectangle
 	Saisir longueur
 	AFFICHER "Entrer la largeur du rectangle : "
 	Saisir largeur
-	AFFICHER aireRectangle(longueur,largeur);
+	AFFICHER "L'aire du rectangle est de : ", aireRectangle(longueur,largeur);
 FIN Aire_rectangle

@@ -17,7 +17,7 @@ debut carreMagique
 		sommeDiagonale <- sommeDiagonale + tableau[indiceLigne][indiceLigne]
 		sommeDiagonaleInverse <- sommeDiagonaleInverse + tableau[indiceLigne][TAILLE - 1 - indiceLigne]
 	indiceLigne Suivant
-	Si (((sommeLigne = sommeColonne) = sommeDiagonale) = sommeDiagonaleInverse)
+	Si sommeLigne = sommeColonne et sommeLigne = sommeDiagonale et sommeLigne = sommeDiagonaleInverse
 	Alors
 		magique = true
 	Sinon

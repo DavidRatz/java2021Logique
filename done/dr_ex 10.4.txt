@@ -5,6 +5,7 @@ FONCTION aireCercle(in rayon:N):N
 	resultat <- (rayon*rayon)*Math.PI
 	RETOURNE resultat
 FIN aireCercle
+
 Debut Aire_cercle
 	VARIABLES LOCALES :
 		VAR rayon :N <- 0

@@ -1,0 +1,36 @@
+STRUCTURE Caracteristique
+VAR pv :N
+VAR endurance :N
+var force :N
+FIN STRUCTURE
+
+Debut main
+	Variables locales:
+		var tableau :T,Caracteristique [NBJOUEUR][Caracteristique]
+		var joueur :T <- ""
+		var pv :N <- 0
+		var endurance :N <- 0
+		var force :N <-0
+		var caracteristique :Caracteristique
+	Fin variables locales
+	
+	POur i allant de 0 à 1
+		Afficher "Entrer le nom du joueur ", i+1, " : "
+		Saisir joueur
+		tableau[i][0] <- joueur
+		Pour j allant de 0 à longueur(caracteristique)-1
+			Afficher "Entrer les pv max (point de vie) : "
+			Saisir pv
+			Afficher "Entrer l'endurance : "
+			Saisir endurance
+			force <- (pv * endurance)^2/pv
+			caracteristique.pv <- pv
+			caracteristique.endurance <- endurance
+			caracteristique.force <- force
+			tableau[i][j] <- caracteristique
+		j suivant
+	i suivant
+	
+	
+	
+Fin main

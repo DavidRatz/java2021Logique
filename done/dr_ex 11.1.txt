@@ -1,0 +1,46 @@
+STRUCTURE Pays
+VAR nom : T
+VAR temperatureMin :F
+VAR temperatureMax :F
+FINSTRUCTURE
+
+Debut main
+	Variables locales:
+		CONST TAILLE :N <- 10
+		Var tableauPays :Pays[TAILLE]
+		var pays :Pays
+		var nomPays :T
+		var temperatureMin :F
+		var temperatureMax :F
+		var temperatureMinActuelle :F
+		var temperatureMaxActuelle :F
+	Fin variables locales
+	
+	Pour i allant de 0 à TAILLE -1
+		Afficher "Entrer le nom d'un pays : "
+		Saisir nomPays
+		pays.nom <- nomPays
+		Afficher "Entrer la température minimale d'un pays : "
+		Saisir temperatureMin
+		pays.temperatureMin <- temperatureMin
+		Afficher "Entrer la température maximale d'un pays : "
+		Saisir temperatureMax
+		pays.temperatureMax <- temperatureMax
+		
+		tableauPays[i] <- pays
+	i suivant
+	
+	Pour position allant de 0 à TAILLE -1
+		Si tableauPays[position+1] < tableauPays[position]
+		Alors
+			temperatureMinActuelle <- tableauPays[position+1].pays.temperatureMin
+		FIn Si
+		Si tableauPays[position+1] > tableauPays[position]
+		Alors
+			temperatureMaxActuelle <- tableauPays[position+1].pays.temperatureMax
+		FIn Si
+	position suivant
+	
+	Afficher "Le pays avec la température minimale est de : ", tableauPays[temperatureMinActuelle].pays.nom
+	Afficher "Le pays avec la température maximale est de : ", tableauPays[temperatureMaxActuelle].pays.nom
+Fin main
