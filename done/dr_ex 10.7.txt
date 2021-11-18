@@ -1,0 +1,102 @@
+PROCEDURE afficher(in tableauPersonne :T[], in taille :N)
+	VARIABLES LOCALES :
+		Var indiceTableau :N <- 0
+	FIN VARIABLES LOCALES
+	POUR indiceTableau ALLANT DE 0 à taille-1
+		Afficher tableauPersonne[indiceTableau]
+	indiceTableau suivant
+Fin afficher
+
+PROCEDURE ajouter(in tableauPersonne :T[], in/out nombreElement :N)
+	VARIABLES LOCALES :
+		var nom :T <- ""
+	FIN VARIABLES LOCALES
+	Afficher "Entrer nom d'une personne : "
+	Saisir nom
+	nombreElement <- nombreElement+1
+	tableauPersonne[nombreElement] <- nom
+Fin afficher
+
+PROCEDURE modifier(in tableauPersonne :T[], in taille :N)
+	VARIABLES LOCALES :
+		var nom :T <- ""
+		var nouveauNom :T <- ""
+		Var indiceTableau :N <- 0
+		Var personneAModifier :N <- 0
+	FIN VARIABLES LOCALES
+	Afficher "Entrer le nom d'une personne à modifier : "
+	Saisir nom
+	POUR indiceTableau ALLANT DE 0 à taille-1
+		Si tableauPersonne[indiceTableau] = nom
+		Alors
+			personneAModifier <- indiceTableau
+		Sinon
+			personneAModifier <- -1
+		Fin si
+	indiceTableau suivant
+	Afficher "Entrer le nouveau nom de la personne à modifier : "
+	Saisir nouveauNom
+	Si personneAModifier >= 0
+		Alors
+			tableauPersonne[personneAModifier] <- nouveauNom
+	Sinon
+		Afficher "Aucune personne avec ce nom à modifier !"
+	Fin si
+Fin afficher
+
+PROCEDURE supprimer(in tableauPersonne :T[], in taille :N)
+	VARIABLES LOCALES :
+		var nom :T <- ""
+		Var indiceTableau :N <- 0
+		Var personneASupprimer :N <- 0
+	FIN VARIABLES LOCALES
+	Afficher "Entrer le nom d'une personne à supprimer : "
+	Saisir nom
+	POUR indiceTableau ALLANT DE 0 à taille-1
+		Si tableauPersonne[indiceTableau] = nom
+		Alors
+			personneASupprimer <- indiceTableau
+		Sinon
+			personneASupprimer <- -1
+		Fin si
+	indiceTableau suivant
+	Si personneASupprimer >= 0
+		Alors
+			tableauPersonne[personneASupprimer] <- ""
+	Sinon
+		Afficher "Aucune personne avec ce nom à supprimer !"
+	Fin si
+Fin afficher
+
+Debut crudPersonne
+	VARIABLES LOCALES :
+		CONST TAILLE :N <- 20
+		VAR choix :N <- -1
+		VAR tableauPersonne :T[TAILLE] <- 0
+		VAR indiceTableau :N <- 0
+		VAR nombreElement :N <- 0
+		Var
+	FIN VARIABLES LOCALES
+	
+	TANT QUE choix != 0
+		Afficher "Menu : "
+		Afficher "1 Afficher la liste des personnes"
+		Afficher "2 Ajouter une personne"
+		Afficher "3 Modifier une personne"
+		Afficher "4 Supprimer une personne"
+		Afficher "0 Quitter"
+		Saisir choix
+		CAS OU choix
+			CAS 1:
+				afficher(tableauPersonne,TAILLE)
+			CAS 2:
+				nombreElement <- longueur(tableauPersonne)
+				ajouter(tableauPersonne,TAILLE,nombreElement)
+			CAS 3:
+				modifier(tableauPersonne,TAILLE)
+			CAS 4:
+				supprimer()
+			Cas DEFAULT:
+				Afficher "Aucune action !"
+	FIn TANT QUE
+Fin crudPersonne

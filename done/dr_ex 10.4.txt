@@ -1,0 +1,15 @@
+FONCTION aireCercle(in rayon:N):N
+	VARIABLES LOCALES :
+		VAR resultat :N <- 0
+	FIN VARIABLES LOCALES
+	resultat <- (rayon*rayon)*Math.PI
+	RETOURNE resultat
+FIN aireCercle
+Debut Aire_cercle
+	VARIABLES LOCALES :
+		VAR rayon :N <- 0
+	FIN VARIABLES LOCALES
+	AFFICHER "Entrer le rayon du cercle : "
+	Saisir rayon
+	AFFICHER aireCercle(rayon);
+FIN Aire_cercle

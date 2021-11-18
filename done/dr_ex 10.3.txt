@@ -1,0 +1,19 @@
+FONCTION aireRectangle(in long:N,
+in larg:N):N
+	VARIABLES LOCALES :
+		VAR resultat :N <- 0
+	FIN VARIABLES LOCALES
+	resultat <- long * larg
+	RETOURNE resultat
+FIN aireRectangle
+Debut Aire_rectangle
+	VARIABLES LOCALES :
+		VAR longueur :N <- 0
+		VAR largueur :N <- 0
+	FIN VARIABLES LOCALES
+	AFFICHER "Entrer la longueur du rectangle : "
+	Saisir longueur
+	AFFICHER "Entrer la largeur du rectangle : "
+	Saisir largeur
+	AFFICHER aireRectangle(longueur,largeur);
+FIN Aire_rectangle

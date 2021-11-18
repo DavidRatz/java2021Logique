@@ -9,7 +9,7 @@ debut diagonaleTableauCarre
 	Pour colonneHorizontale allant de 0 à taille-1
 		Pour colonneVerticale allant de colonneHorizontale à taille-1
 			tableau[colonneHorizontale][colonneVerticale] <- 1
-			tableau[colonneHorizontale][taille-1-colonneVerticale] <- 2
+			tableau[taille-1-colonneHorizontale][colonneVerticale] <- 2
 		colonneVerticale SUIVANT
 	colonneHorizontale SUIVANT
 fin nombrePremier

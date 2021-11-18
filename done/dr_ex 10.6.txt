@@ -1,0 +1,36 @@
+FONCTION calcul(in nombre1:N,in nombre2:N,in operateur:N):N
+	VARIABLES LOCALES :
+		VAR resultat :N <- 0
+	FIN VARIABLES LOCALES
+	Cas OU operateur
+		Cas '+':
+			resultat <- nombre1 + nombre2
+		Cas '-':
+			resultat <- nombre1 - nombre2
+		Cas '*':
+			resultat <- nombre1 * nombre2
+		Cas '/':
+			resultat <- nombre1 / nombre2
+		Cas Defaut
+	Fin cas ou
+	RETOURNE resultat
+FIN calcul
+
+Debut calculatrice
+	VARIABLES LOCALES :
+		VAR premierOperande :N <- 0
+		VAR deuxiemeOperande :N <- 0
+		VAR operateur :C <- 0
+	FIN VARIABLES LOCALES
+	Afficher "Entrer la première opérande : "
+	Saisir premierOperande
+	Afficher "Entrer la deuxième opérande : "
+	Saisir deuxiemeOperande
+	Afficher "Entrer l'opérateur : "
+	Saisir operateur
+	Si (deuxiemeOperande != 0 ET operateur != '/')
+		Afficher "Le résultat est : ", calcul(premierOperande,deuxiemeOperande,operateur)
+	Sinon
+		Afficher "Impossible de diviser par 0 !"
+	Fin Si
+Fin calculatrice

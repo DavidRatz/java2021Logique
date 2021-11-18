@@ -1,0 +1,33 @@
+Début rotationMatriceCarre
+    Début variables locales
+        CONST taille:N <- 4
+        var tab:[taille][taille]
+        var tabTemp:[taille][taille]
+		VAR tmp:N <- 0
+    Fin variables locales
+
+	Pour x allant 0 à taille
+        Pour y allant de 0 à taille-1
+            tabTemp[y][taille-y-1] = tab[x][y];
+        y suivant
+    x suivant
+    afficher tabTemp
+	
+	Afficher "Version 2 : à l'aide d'une simple variable intermédiaire
+    
+    POUR x ALLANT de 0 A TAILLE - 1
+        POUR y ALLANT DE 0 A (TAILLE DIV 2) - 1
+            tmp <- tab[x][y]
+            tab[x][y] <- tab[TAILLE - 1 - x][y]
+            tab[TAILLE - 1 - x][y]] <- tmp
+        y SUIVANT
+    x SUIVANT
+  
+    POUR x ALLANT DE 1 A TAILLE - 1 
+        POUR y ALLANT DE 0 A TAILLE - 1 - x
+            tmp <- tab[y][x + y]
+            tab[y][x + y] <- tab[y + x][y]
+            tab[x + y][y] <- tmp
+        y SUIVANT
+    x SUIVANT
+Fin rotationMatriceCarre

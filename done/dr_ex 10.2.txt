@@ -1,0 +1,34 @@
+Fonction plusPetitPlusGrand(
+    in nb1:N,
+    in nb2:N
+):N
+    variables locales:
+        var plusPetit:B <-0
+    fin variables locales
+    Si nb1<nb2
+        alors
+            plusPetit<-True
+    Sinon
+        plusPetit<-False
+    
+    retourne plusPetit
+Fin plusPetitPlusGrand
+Debut recherchePlusPetitOuPlusGrand
+	variables locales:
+        var nb1:N <-0
+        var nb2:N <-0
+        var estPlusPetit:B <-0
+    fin variables locales
+    afficher "Demander un premier nombre"
+    saisir nb1
+    afficher "Demande un deuxième nombre"
+    saisir nb2
+	
+	estPlusPetit <-plusPetitPlusGrand(nb1,nb2)
+    
+	Si estPlusPetit = true
+    alors
+        Afficher "Le nombre le plus petit est: " nb1, ", le nombre le plus grand est: ", nb2
+    sinon
+        Afficher "Le nombre le plus petit est: " nb2, " le nombre le plus grand est: ", nb1
+Fin recherchePlusPetitOuPlusGrand
