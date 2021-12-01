@@ -58,7 +58,7 @@ Solution
 			Fin si
 			
 			Afficher "Le taux de TVA vaut : ", tva * 100, "%"
-			Afficher "Lemontant de la tva est : ", montantTva
+			Afficher "Le montant de la tva est : ", montantTva
 			Afficher "Le prix TVAC vaut : ", prix + montantTva
 		Fin si
 	Fin tva

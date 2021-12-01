@@ -25,9 +25,9 @@ Solution
 			Alors
 				valeurX <- -valeurB / valeurA
 				Afficher "La valeur de X est de : ", valeurX
-				Afficher "L'équation du 1er degré: ", valeurA, " * ", valeurX, " + ", valeurB, " = 0" est (vrai ou fausse)", (valeurA * valeurX + valeurB) = 0
+				Afficher "L'équation du 1er degré: ", valeurA, " * ", valeurX, " + ", valeurB, " = 0 est (vrai ou fausse)", (valeurA * valeurX + valeurB) = 0
 			Sinon
-				Afficher "la valeur de x est indéterminée ! "
+				Afficher "la valeur de x est indéterminé ! "
 			Fin Si
 		Sinon
 			Afficher "La valeur de x est impossible à calculer ! "

@@ -38,62 +38,56 @@ Solution
 		Afficher "Entrer le somme voulue : "
 		Saisir sommeSaisie
 		sommeOrigine <- sommeSaisie
-		Si somme MOD 0,1 != 0
+		Si sommeSaisie MOD 0,1 != 0
 		Alors
-			somme <- somme + (0,10 - somme MOD 0,1)
+			sommeSaisie <- sommeSaisie + (0,10 - sommeSaisie MOD 0,1)
 		Fin si
-		Si somme MOD 1 != 0
+		Si sommeSaisie MOD 1 != 0
 		Alors
-			somme <- somme + 0.5
+			sommeSaisie <- sommeSaisie + 0.5
 		Fin si
-		Si somme MOD 100 != 0
+		Si sommeSaisie >= 100
+		Alors		
+			nombreBillet100 <- sommeSaisie DIV 100
+			sommeSaisie <- sommeSaisie MOD 100
+		Fin si
+		Si sommeSaisie >= 50
 		Alors
-			somme <- somme MOD 100
-			nombreBillet100 <- somme DIV 100
-		Sinon
-			Si somme MOD 50 != 0
-			Alors
-				somme <- somme MOD 50
-				nombreBillet50 <- somme DIV 50
-			Sinon
-				Si somme MOD 20 != 0
-				Alors
-					somme <- somme MOD 20
-					nombreBillet20 <- somme DIV 20
-				Sinon
-					Si somme MOD 5 != 0
-					Alors
-						somme <- somme MOD 5
-						nombreBillet5 <- somme DIV 5
-					Sinon
-						Si somme MOD 2 != 0
-						Alors
-							somme <- somme MOD 2
-							nombrePiece2 <- somme DIV 2
-						Sinon
-							Si somme MOD 1 != 0
-							Alors
-								somme <- somme MOD 1
-								nombrePiece1 <- somme DIV 1
-							Sinon
-								Si somme MOD 0.5 != 0
-								Alors
-									somme <- somme MOD 0.5
-									nombrePiece050 <- somme DIV 0.5
-								Sinon
-									Si somme MOD 0.2 != 0
-									Alors
-										somme <- somme MOD 0.2
-										nombrePiece020 <- somme DIV 0.2
-									Fin si
-								Fin si
-							Fin si
-						Fin si
-					Fin si
-				Fin si
-			Fin si
+			nombreBillet50 <- sommeSaisie DIV 50
+			sommeSaisie <- sommeSaisie MOD 50
 		Fin si
-		Afficher sommeOrigine " € se décompose en : "
+		Si sommeSaisie >= 20
+		Alors
+			nombreBillet20 <- sommeSaisie DIV 20
+			sommeSaisie <- sommeSaisie MOD 20
+		Fin si
+		Si sommeSaisie >= 5
+		Alors
+			nombreBillet5 <- sommeSaisie DIV 5
+			sommeSaisie <- sommeSaisie MOD 5
+		Fin si
+		Si sommeSaisie >= 2
+		Alors
+			nombrePiece2 <- sommeSaisie DIV 2
+			sommeSaisie <- sommeSaisie MOD 2
+		Fin si
+		Si sommeSaisie >= 1
+		Alors
+			sommeSaisie <- sommeSaisie MOD 1
+			nombrePiece1 <- sommeSaisie DIV 1
+		Fin si
+		Si sommeSaisie >= 0.5
+		Alors
+			nombrePiece050 <- sommeSaisie DIV 0.5
+			sommeSaisie <- sommeSaisie MOD 0.5
+		Fin si
+		Si sommeSaisie >= 0.2
+		Alors
+			nombrePiece020 <- sommeSaisie DIV 0.2
+			sommeSaisie <- sommeSaisie MOD 0.2
+		Fin si
+		
+		Afficher sommeOrigine, " € se décompose en : "
 		Afficher "- ", nombreBillet100, " billets de 100 €, "
 		Afficher "- ", nombreBillet50, " billets de 50 €, "
 		Afficher "- ", nombreBillet20, " billets de 20 €, "

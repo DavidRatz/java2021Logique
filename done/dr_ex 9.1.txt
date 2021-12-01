@@ -12,4 +12,4 @@ debut diagonaleTableauCarre
 			tableau[taille-1-colonneHorizontale][colonneVerticale] <- 2
 		colonneVerticale SUIVANT
 	colonneHorizontale SUIVANT
-fin nombrePremier
+fin diagonaleTableauCarre
